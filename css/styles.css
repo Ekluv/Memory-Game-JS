@@ -1,0 +1,44 @@
+body {
+	background: #E6E8E8;
+}
+.mt-10 {
+	margin-top: 4%;
+}
+
+.card-wrapper {
+	perspective: 800px;
+	height: 140px;
+	padding: 10px;
+}
+
+.img-box {
+	height: 75px;
+}
+.img-box .img-responsive {
+	height: 100%;
+	display: block;
+    margin: 0 auto;
+}
+
+.inside {
+    transform-style: preserve-3d;
+    transition: .6s ease-in-out;
+}
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+.back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+.inside.flipped{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}

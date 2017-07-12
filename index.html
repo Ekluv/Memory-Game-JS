@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic' rel='stylesheet' type='text/css'>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body ng-app="memoryGame">
+        <div ng-controller="mainCtrl" class="container mt-10">
+
+            <div class="col-md-2 col-sm-3 col-xs-4 card-wrapper" ng-repeat="card in cards track by $index">
+
+                <div class="inside" ng-class="{'flipped': card.open, '': !card.open}" ng-click="onCardClick($index)">             
+                    <div class="front">
+                        <div class="img-box">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/codepen-logo.png" class="img-responsive">
+                        </div>
+                    </div>              
+                    <div class="back">
+                        <div class="img-box">
+                            <img src="{{card.img}}" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
